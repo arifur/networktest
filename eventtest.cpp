@@ -9,7 +9,6 @@ void EventTest::eventTest()
 {
     auto textTarget = root->findChild<QObject*>("text");
     QString text = QString();
-    //root->findChild<QObject*>("text")->setProperty("text", QVariant(i++));
 
     auto fileCount = 2;
     QString files [] = {
@@ -20,7 +19,6 @@ void EventTest::eventTest()
     QDirIterator it("/sys/class/net");
     while (it.hasNext()) {
         auto partialPath = it.next();
-        //qDebug() << it.next();
 
         const auto intend = "    ";
         auto fullPath = partialPath + "/statistics";
@@ -57,21 +55,4 @@ void EventTest::eventTest()
 
         textTarget->setProperty("text", text);
     }
-
-    /*
-    QFile file("in.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
-
-    while (!file.atEnd()) {
-        QByteArray line = file.readLine();
-        process_line(line);
-    }
-    */
-
-    //auto child = root->findChild<QObject*>("text")
-    //if (child)
-    //{
-    //    child->setProperty("text", QVariant(i++));
-    //}
 }
